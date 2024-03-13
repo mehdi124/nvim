@@ -1,0 +1,115 @@
+{
+  "GoFunc": {
+    "prefix": ["func"],
+    "body": [
+      "func $1() {",
+        "\t$0",
+      "}"
+    ],
+    "description": "Go func template"
+  },
+  "GoMainPackage": {
+    "prefix": ["main_pkg"],
+    "body": [
+      "package main",
+      "",
+      "func main() {",
+        "\t$0",
+      "}"
+    ],
+    "description": "Main package function template"
+  },
+  "GoMain": {
+    "prefix": ["main"],
+    "body": [
+      "func main() {",
+        "\t$0",
+      "}"
+    ],
+    "description": "Main function template"
+  },
+  "GoLogrus": {
+    "prefix": ["logrus"],
+    "body": "logrus.WithTime(time.Now()).Log(logrus.InfoLevel, \"${1:$TM_SELECTED_TEXT}\")"
+  },
+  "GoLog": {
+    "prefix": ["log"],
+    "body": "log.Println(${1:$TM_SELECTED_TEXT});"
+  },
+  "GoConst": {
+    "prefix": ["const"],
+    "body": [
+      "const $1 = $2"
+    ],
+    "description": "Const definition template."
+  },
+  "Type": {
+    "prefix": ["type"],
+    "body": [
+      "type $1 struct {",
+        "\t$0",
+      "}"
+    ],
+    "description": "Type definition template."
+  },
+  "GoRoutine": {
+    "prefix": ["go_routine"],
+    "body": [
+      "go func() {",
+        "\t$0",
+      "}()"
+    ],
+    "description": "GoRoutine template."
+  },
+  "Defer": {
+    "prefix": ["defer_block"],
+    "body": [
+      "defer func() {",
+        "\t$0",
+      "}()"
+    ],
+    "description": "Defer template."
+  },
+  "json_tag": {
+    "prefix": ["`", "json", "tag"],
+    "body": [
+      "`$0:\"$0\"`"
+    ],
+    "description": "StructTag template."
+  },
+ "For": {
+    "prefix": ["for"],
+    "body": [
+      "for {",
+      "}"
+    ],
+    "description": "For loop template"
+  },
+ 
+  "ForSelect": {
+    "prefix": ["for_select"],
+    "body": [
+      "for {",
+        "\tselect {",
+          "\tcase $1:",
+            "\t$2",
+        "\t}",
+      "}"
+    ],
+    "description": "For select template"
+  },
+  "FmtSprintf": {
+    "prefix": ["sprintf"],
+    "body": [
+      "fmt.Sprintf(\"$1\", \"\")"
+    ],
+    "description": "fmt.SprintF template"
+  },
+  "append": {
+    "prefix": ["append"],
+    "body": [
+      "$0 = append($0, ...)"
+    ],
+    "description": "slice append template"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "uuid": {
+    "prefix": "uuid",
+    "body": [
+      "${VIM:system('python3 -c \"import uuid, sys;sys.stdout.write(str(uuid.uuid4()))\"')}"
+    ]
+  },
+  "Class": {
+    "prefix": ["class"],
+    "body": [
+      "/**",
+      " * @author ${VIM:\\$USER}",
+      " */",
+      "class $1 ${2:extends ${3:Parent} }{",
+      "\tconstructor() {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Class definition template."
+  }
+}
